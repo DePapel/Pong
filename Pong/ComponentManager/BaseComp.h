@@ -15,7 +15,7 @@ protected:
 
 public:
 	BaseComponent(GO* owner) : mOwner(owner), active(true) {};
-	virtual ~BaseComponent() {}
+	virtual ~BaseComponent();
 
 	virtual bool Update() = 0
 	{

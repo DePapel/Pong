@@ -1,5 +1,6 @@
 #include "SpriteComp.h"
 #include "TransformComp.h"
+#include "../Resource/ResourceManager.h"
 
 SpriteComp::SpriteComp(GO* owner) : GraphicsComp(owner)
 {
@@ -7,7 +8,9 @@ SpriteComp::SpriteComp(GO* owner) : GraphicsComp(owner)
 
 SpriteComp::~SpriteComp()
 {
-	AEGfxTextureUnload(mTex);
+	//Manager<GraphicsComp>::getPtr()->RemovePtr(this);
+	ResourceManager* ptr = ResourceManager::GetPtr();
+	ptr->UnloadFn(name);
 }
 
 bool SpriteComp::Update()
@@ -63,11 +66,20 @@ bool SpriteComp::Update()
 	return false;
 }
 
-void SpriteComp::SetTexture(std::string s)
+void SpriteComp::SetTexture(std::string& s)
 {
 	if (mTex != nullptr)
 		AEGfxTextureUnload(mTex);
 
-	mTex = AEGfxTextureLoad(s.c_str());
+	name = s;
+	//Add Texture Resource unloaddata...
+	ResourceManager* ptr = ResourceManager::GetPtr();
+	TextureResource* pB = ptr->GetFn<TextureResource>(s);
+
+	mTex = static_cast<AEGfxTexture*>(pB->GetData());
+
+
+
+	//mTex = AEGfxTextureLoad(s.c_str());
 }
 

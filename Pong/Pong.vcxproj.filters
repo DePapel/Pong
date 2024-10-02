@@ -66,6 +66,18 @@
     <ClCompile Include="Components\CollisionComp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Resource\ReSource.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Resource\ResourceManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ComponentManager\BaseComp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GSM\GameOver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="score.h">
@@ -117,6 +129,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Components\CollisionComp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource\ReSource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource\ResourceManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GSM\GameOver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

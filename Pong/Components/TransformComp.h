@@ -32,6 +32,8 @@ public:
 	//Other Fn
 	void PrintMatrix();
 
+	virtual ~TransformComp();
+
 	//For the RTTI
 	//static BaseRTTI* CreateTransformComp();
 	//std::string GetType() override;

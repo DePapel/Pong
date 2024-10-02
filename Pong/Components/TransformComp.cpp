@@ -85,3 +85,8 @@ void TransformComp::PrintMatrix()
 	}
 	std::cout << "---------------------------------" << std::endl;
 }
+
+TransformComp::~TransformComp()
+{
+
+}

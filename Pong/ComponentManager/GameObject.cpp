@@ -1,5 +1,5 @@
 #include "GameObject.h"
-//#include "BaseComp.h"
+#include "BaseComp.h"
 
 GO::GO()
 {

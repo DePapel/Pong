@@ -3,6 +3,9 @@
 
 #include "AEEngine.h"
 #include "AEAudio.h"
+#include "../Resource/ResourceManager.h"
+
+
 
 AudioComp::AudioComp(GO* owner) : BaseComponent(owner), mGroup(), mAudio()
 {
@@ -13,9 +16,24 @@ AudioComp::AudioComp(GO* owner) : BaseComponent(owner), mGroup(), mAudio()
 AudioComp::~AudioComp()
 {
 	Manager<AudioComp>::getPtr()->RemovePtr(this);
+	ResourceManager* ptr = ResourceManager::GetPtr();
+	ptr->UnloadFn(name);
 
-	AEAudioUnloadAudio(mAudio);
 	AEAudioUnloadAudioGroup(mGroup);
+}
+
+void AudioComp::SetAudio(const std::string& s)
+{
+	name = s;
+	ResourceManager* ptr = ResourceManager::GetPtr();
+	MusicResource* pA = ptr->GetFn<MusicResource>(s);
+
+	mAudio = static_cast<AEAudio*>(pA->GetData());
+}
+
+void AudioComp::SetMusicLoop(int n)
+{
+	musicLoop = n;
 }
 
 bool AudioComp::Update()
@@ -30,15 +48,13 @@ bool AudioComp::Update()
 	if (!playing)
 	{
 		playing = true;
-		AEAudioPlay(mAudio, mGroup, volume, pitch, loops);
+		
+		if (musicLoop == -1)
+			loops = -1;
+		else if (musicLoop == 0)
+			loops = 0;
+		AEAudioPlay(*mAudio, mGroup, volume, pitch, loops);
 	}
 
 	return false;
 }
-
-void AudioComp::SetAudio(std::string s)
-{
-	mAudio = AEAudioLoadMusic(s.c_str());
-}
-
-

@@ -5,5 +5,6 @@ class EngineComp : public BaseComponent
 {
 public:
 	EngineComp(GO* owner);
-	~EngineComp();
+	virtual ~EngineComp();
+
 };

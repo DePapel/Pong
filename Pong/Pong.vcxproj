@@ -98,6 +98,7 @@ xcopy "$(SolutionDir)Extern\AlphaEngine\lib\fmod.dll" "$(OutDir)" /s /r /y /q</C
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ComponentManager\BaseComp.cpp" />
     <ClCompile Include="ComponentManager\EngineComp.cpp" />
     <ClCompile Include="ComponentManager\GameObject.cpp" />
     <ClCompile Include="ComponentManager\GraphicsComp.cpp" />
@@ -110,11 +111,14 @@ xcopy "$(SolutionDir)Extern\AlphaEngine\lib\fmod.dll" "$(OutDir)" /s /r /y /q</C
     <ClCompile Include="Components\TransformComp.cpp" />
     <ClCompile Include="GameObject\GameObjectManager.cpp" />
     <ClCompile Include="GameObject\GameObjectManager.h" />
+    <ClCompile Include="GSM\GameOver.cpp" />
     <ClCompile Include="GSM\myGameStateManager.cpp" />
     <ClCompile Include="GSM\myGoalLevel.cpp" />
     <ClCompile Include="GSM\myMainLevel.cpp" />
     <ClCompile Include="GSM\myMainLevel.h" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Resource\ReSource.cpp" />
+    <ClCompile Include="Resource\ResourceManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ComponentManager\BaseComp.h" />
@@ -130,9 +134,12 @@ xcopy "$(SolutionDir)Extern\AlphaEngine\lib\fmod.dll" "$(OutDir)" /s /r /y /q</C
     <ClInclude Include="Components\Rigidbody.h" />
     <ClInclude Include="Components\SpriteComp.h" />
     <ClInclude Include="Components\TransformComp.h" />
+    <ClInclude Include="GSM\GameOver.h" />
     <ClInclude Include="GSM\myBaseLevel.h" />
     <ClInclude Include="GSM\myGameStateManager.h" />
     <ClInclude Include="GSM\myGoalLevel.h" />
+    <ClInclude Include="Resource\ReSource.h" />
+    <ClInclude Include="Resource\ResourceManager.h" />
     <ClInclude Include="score.h" />
   </ItemGroup>
   <ItemGroup>

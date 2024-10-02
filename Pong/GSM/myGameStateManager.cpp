@@ -4,6 +4,7 @@
 #include "../ComponentManager/EngineComp.h"
 #include "../ComponentManager/LogicComp.h"
 #include "../ComponentManager/GraphicsComp.h"
+#include "../Components/AudioComp.h"
 GSM::GameStateManager* GSM::GameStateManager::ptr = nullptr;
 GSM::GameStateManager::GameStateManager() : previousLevel(nullptr), currentLevel(nullptr) {};
 
@@ -50,9 +51,8 @@ void GSM::GameStateManager::Update()
 		Manager<EngineComp>::getPtr()->Update();
 		Manager<LogicComp>::getPtr()->Update();
 		Manager<GraphicsComp>::getPtr()->Update();
-
-
-
+		Manager<AudioComp>::getPtr()->Update();
+		
 		currentLevel->Update();
 	}
 }

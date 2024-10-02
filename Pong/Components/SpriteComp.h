@@ -21,6 +21,7 @@ private:
 	Color mColor;
 
 	//texture
+	std::string name;
 	AEGfxTexture* mTex = nullptr;
 
 public:
@@ -33,5 +34,5 @@ public:
 	//Gettors/Settors
 	Color& GetColor() { return mColor; }
 
-	void SetTexture(std::string s);
+	void SetTexture(std::string& s);
 };

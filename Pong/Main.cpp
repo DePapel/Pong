@@ -62,12 +62,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 		gsm->Update();
 		// Your own update logic goes here
 
-
 		// Your own rendering logic goes here
-		//AEGfxPrint(pFont, "0", -0.6, 0.8, 1.f, 0, 0, 0, 1.f);
-		//AEGfxPrint(pFont, "0", 0.55, 0.8, 1.f, 0, 0, 0, 1.f);
-		//AEGfxMeshDraw(pMesh, AE_GFX_MDM_TRIANGLES);
-
 
 		// Informing the system about the loop's end
 		AESysFrameEnd();
